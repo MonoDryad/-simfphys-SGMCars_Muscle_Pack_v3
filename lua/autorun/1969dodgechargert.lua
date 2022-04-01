@@ -74,15 +74,15 @@ list.Set( "simfphys_lights", "1969_dodgec", light_table)
 local V = {
 	Name = "1969 Dodge Charger RT", -- Name of the car in-game 
 	Model = "models/sentry/charger.mdl", -- machine model (in the tab add-ons and prop auto)
-	Category = "[Iar]SGMCars Muscle Pack 2.0", -- category which is car
+	Category = "[Dryad]SGMCars Muscle", -- category which is car
 
 	Members = {
-		Mass = 1804, -- how much your vehicle weights
+		Mass = 1633, -- how much your vehicle weights
 
 		AirFriction = -300000, -- just see and hope you get it right
 
-		FrontWheelRadius = 15, -- how big is your front wheel? (those are physical, not visual)
-		RearWheelRadius = 15, -- how big is your rear wheel? (those are physical, not visual)
+		FrontWheelRadius = 14.4, -- how big is your front wheel? (those are physical, not visual)
+		RearWheelRadius = 14.4, -- how big is your rear wheel? (those are physical, not visual)
 
 		CustomMassCenter = Vector(0,0,-6), 
 
@@ -118,36 +118,36 @@ local V = {
 
 		LightsTable = "1969_dodgec",
 
-		SpeedoMax = 160, -- The maximum speed on the speedometer
+		SpeedoMax = 240, -- The maximum speed on the speedometer
 
 		StrengthenSuspension = false,
 
-		FrontHeight = 12, -- the height of the front suspension
-		FrontConstant = 47000, -- if it's higher, the suspension is set higher and will move less
-		FrontDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
-		FrontRelativeDamping = 3000, -- just copy the setting above
+		FrontHeight = 14, -- the height of the front suspension
+		FrontConstant = 24000, -- if it's higher, the suspension is set higher and will move less
+		FrontDamping = 5000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
+		FrontRelativeDamping = 5000, -- just copy the setting above
 
-		RearHeight = 12, -- the height of the rear suspension
-		RearConstant = 47000, -- if it's higher, the suspension is set higher and will move less
-		RearDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
-		RearRelativeDamping = 3000, -- just copy the setting above
+		RearHeight = 14, -- the height of the rear suspension
+		RearConstant = 24000, -- if it's higher, the suspension is set higher and will move less
+		RearDamping = 5000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
+		RearRelativeDamping = 5000, -- just copy the setting above
 
-		FastSteeringAngle = 10, -- how sharp it will turn until it reaches a paticular speed
-		SteeringFadeFastSpeed = 535, -- yeah kinda the paticular speed
+		FastSteeringAngle = 7, -- how sharp it will turn until it reaches a paticular speed
+		SteeringFadeFastSpeed = 1235, -- yeah kinda the paticular speed
 
-		TurnSpeed = 6,  -- how fast will it turn? higher is faster. base is 8, but in my opinion, 6 is better.
+		TurnSpeed = 7,  -- how fast will it turn? higher is faster. base is 8, but in my opinion, 6 is better.
 
 		MaxGrip = 60, -- watch out, otherwise your car will slip or will roll over its head.
-		Efficiency = 0.881, -- how fast you car will go, like acceleration
+		Efficiency = 1, -- how fast you car will go, like acceleration
 		GripOffset = -7, -- negative is for the rear and the positive for the front
 		BrakePower = 45, -- If set really high, there's a chance your car will fly over his head
 
-		IdleRPM = 720, -- just let it 720, it doesn't matter anyway
-		LimitRPM = 6500, -- this is the limit. you can't go higher than the limit
+		IdleRPM = 420, -- just let it 720, it doesn't matter anyway
+		LimitRPM = 6000, -- this is the limit. you can't go higher than the limit
 		Revlimiter = true, -- If true - When the speedometer reaches of the red designation, it does not pass on, if false it is ignored
-		PeakTorque = 311, -- how fast your wheels spin
-		PowerbandStart = 1000, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
-		PowerbandEnd = 5410, -- this is the red limit.
+		PeakTorque = 305, -- how fast your wheels spin
+		PowerbandStart = 800, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
+		PowerbandEnd = 5700, -- this is the red limit.
 		Turbocharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Supercharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Backfire = true, -- will you car bang bang piew piew out of the exhaust?
@@ -158,10 +158,42 @@ local V = {
 
 		PowerBias = 1, -- if positive, it's rear wheel drive, if negative, it's front wheel drive. for example, a ford mustang is rear wheel drive (1) and lamborghini are mostly all wheel drive (0)
 
-		EngineSoundPreset = -1, -- just let that.
+		EngineSoundPreset = 0,
+		
+		snd_low = "dryad/fordmustang/3754c.wav",
+		snd_low_revdown = "dryad/fordmustang/4076c_ext_off.wav",
+		snd_low_pitch = 1,
+		
+		snd_gearup = "dryad/fordmustang/gearupEXT.wav",
+		snd_geardown = "dryad/fordmustang/geardnEXT.wav",
+
+		snd_mid_pitch = 1,
+
+		Sound_Idle = "dryad/fordmustang/idle_1201b.wav",
+		Sound_IdlePitch = 1,
+		
+		Sound_Mid = "dryad/fordmustang/5591a_ext.wav",
+		Sound_MidPitch = 1,
+		Sound_MidVolume = 1,
+		Sound_MidFadeOutRPMpercent = 58,
+		Sound_MidFadeOutRate = 0.476,
+
+		snd_backfire = "dryad/fordmustang/backfireEXT_2.wav",
+		
+		Sound_High = "dryad/fordmustang/7065e.wav",
+		Sound_HighPitch = 1,
+		Sound_HighVolume = 1,
+		Sound_HighFadeInRPMpercent = 58,
+		Sound_HighFadeInRate = 0.19,
+		
+		Sound_Throttle = "",
+		Sound_ThrottlePitch = 1,
+		Sound_ThrottleVolume = 1,
+		
+		snd_horn = "dryad/fordmustang/horn.wav",
 --
-		DifferentialGear = 0.865, -- experiment with it.
-		Gears = {-0.03,0,0.05,0.12,0.17,0.22} -- how many gears do you want?
+		DifferentialGear = 0.84, -- experiment with it.
+		Gears = {-0.03,0,0.14,0.24,0.34} -- how many gears do you want?
 	}
 }
 if (file.Exists( "models/sentry/charger.mdl", "GAME" )) then -- name of the model (".mdl")

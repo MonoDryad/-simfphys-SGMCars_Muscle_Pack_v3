@@ -68,15 +68,15 @@ list.Set( "simfphys_lights", "2006_s281", light_table)
 local V = {
 	Name = "2006 Saleen s281 Extreme", -- Name of the car in-game 
 	Model = "models/sentry/s281e.mdl", -- machine model (in the tab add-ons and prop auto)
-	Category = "[Iar]SGMCars Muscle Pack 2.0", -- category which is car
+	Category = "[Dryad]SGMCars Muscle", -- category which is car
 
 	Members = {
 		Mass = 1604, -- how much your vehicle weights
 
 		AirFriction = -300000, -- just see and hope you get it right
 
-		FrontWheelRadius = 16, -- how big is your front wheel? (those are physical, not visual)
-		RearWheelRadius = 16, -- how big is your rear wheel? (those are physical, not visual)
+		FrontWheelRadius = 15, -- how big is your front wheel? (those are physical, not visual)
+		RearWheelRadius = 15, -- how big is your rear wheel? (those are physical, not visual)
 
 		CustomMassCenter = Vector(0,0,-6), 
 
@@ -112,17 +112,17 @@ local V = {
 
 		LightsTable = "2006_s281",
 
-		SpeedoMax = 160, -- The maximum speed on the speedometer
+		SpeedoMax = 240, -- The maximum speed on the speedometer
 
 		StrengthenSuspension = false,
 
-		FrontHeight = 12, -- the height of the front suspension
-		FrontConstant = 47000, -- if it's higher, the suspension is set higher and will move less
+		FrontHeight = 10, -- the height of the front suspension
+		FrontConstant = 38000, -- if it's higher, the suspension is set higher and will move less
 		FrontDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
 		FrontRelativeDamping = 3000, -- just copy the setting above
 
-		RearHeight = 12, -- the height of the rear suspension
-		RearConstant = 47000, -- if it's higher, the suspension is set higher and will move less
+		RearHeight = 11, -- the height of the rear suspension
+		RearConstant = 38000, -- if it's higher, the suspension is set higher and will move less
 		RearDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
 		RearRelativeDamping = 3000, -- just copy the setting above
 
@@ -132,16 +132,16 @@ local V = {
 		TurnSpeed = 6,  -- how fast will it turn? higher is faster. base is 8, but in my opinion, 6 is better.
 
 		MaxGrip = 75, -- watch out, otherwise your car will slip or will roll over its head.
-		Efficiency = 0.92, -- how fast you car will go, like acceleration
+		Efficiency = 0.8, -- how fast you car will go, like acceleration
 		GripOffset = -7, -- negative is for the rear and the positive for the front
 		BrakePower = 65, -- If set really high, there's a chance your car will fly over his head
 
 		IdleRPM = 720, -- just let it 720, it doesn't matter anyway
-		LimitRPM = 6900, -- this is the limit. you can't go higher than the limit
+		LimitRPM = 6250, -- this is the limit. you can't go higher than the limit
 		Revlimiter = true, -- If true - When the speedometer reaches of the red designation, it does not pass on, if false it is ignored
-		PeakTorque = 221, -- how fast your wheels spin
-		PowerbandStart = 2350, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
-		PowerbandEnd = 5900, -- this is the red limit.
+		PeakTorque = 470, -- how fast your wheels spin
+		PowerbandStart = 1050, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
+		PowerbandEnd = 6050, -- this is the red limit.
 		Turbocharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Supercharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Backfire = false, -- will you car bang bang piew piew out of the exhaust?
@@ -152,10 +152,44 @@ local V = {
 
 		PowerBias = 1, -- if positive, it's rear wheel drive, if negative, it's front wheel drive. for example, a ford mustang is rear wheel drive (1) and lamborghini are mostly all wheel drive (0)
 
-		EngineSoundPreset = 5, -- just let that.
+		EngineSoundPreset = 0,
+		
+		snd_low = "dryad/daumasugadaaqui/xbow_on_2500.wav",
+		snd_low_revdown = "dryad/daumasugadaaqui/xbow_off_2500.wav",
+		snd_mid_revdown = "dryad/daumasugadaaqui/xbow_off_4500.wav",
+		snd_high_revdown = "dryad/daumasugadaaqui/xbow_off_7250.wav",
+		snd_low_pitch = 1,
+		
+		snd_gearup = "dryad/daumasugadaaqui/gearupEXT.wav",
+		snd_geardown = "dryad/daumasugadaaqui/geardnEXT.wav",
+
+		snd_mid_pitch = 1,
+
+		Sound_Idle = "dryad/daumasugadaaqui/xbow_idle.wav",
+		Sound_IdlePitch = 1,
+		
+		Sound_Mid = "dryad/daumasugadaaqui/xbow_on_4500.wav",
+		Sound_MidPitch = 1,
+		Sound_MidVolume = 1,
+		Sound_MidFadeOutRPMpercent = 58,
+		Sound_MidFadeOutRate = 0.476,
+
+		snd_backfire = "dryad/daumasugadaaqui/backfire_1.wav",
+		
+		Sound_High = "dryad/daumasugadaaqui/xbow_on_7250.wav",
+		Sound_HighPitch = 1,
+		Sound_HighVolume = 1,
+		Sound_HighFadeInRPMpercent = 58,
+		Sound_HighFadeInRate = 0.19,
+		
+		Sound_Throttle = "",
+		Sound_ThrottlePitch = 1,
+		Sound_ThrottleVolume = 1,
+		
+		snd_horn = "dryad/daumasugadaaqui/horn.wav",
 --
-		DifferentialGear = 0.85, -- experiment with it.
-		Gears = {-0.04,0,0.07,0.12,0.18,0.22,0.254} -- how many gears do you want?
+		DifferentialGear = 1, -- experiment with it.
+		Gears = {-0.1,0,0.1,0.15,0.20,0.25,0.30,0.35} -- how many gears do you want?
 	}
 }
 if (file.Exists( "models/sentry/s281e.mdl", "GAME" )) then -- name of the model (".mdl")

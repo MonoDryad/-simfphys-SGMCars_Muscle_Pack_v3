@@ -76,7 +76,7 @@ list.Set( "simfphys_lights", "2015_gt", light_table)
 local V = {
 	Name = "2015 Ford Mustang GT", -- Name of the car in-game 
 	Model = "models/sentry/15gt_new.mdl", -- machine model (in the tab add-ons and prop auto)
-	Category = "[Iar]SGMCars Muscle Pack 2.0", -- category which is car
+	Category = "[Dryad]SGMCars Muscle", -- category which is car
 
 	Members = {
 		Mass = 1604, -- how much your vehicle weights
@@ -119,17 +119,17 @@ local V = {
 
 		LightsTable = "2015_gt",
 
-		SpeedoMax = 160, -- The maximum speed on the speedometer
+		SpeedoMax = 240, -- The maximum speed on the speedometer
 
 		StrengthenSuspension = false,
 
 		FrontHeight = 12, -- the height of the front suspension
-		FrontConstant = 47000, -- if it's higher, the suspension is set higher and will move less
+		FrontConstant = 37000, -- if it's higher, the suspension is set higher and will move less
 		FrontDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
 		FrontRelativeDamping = 3000, -- just copy the setting above
 
 		RearHeight = 12, -- the height of the rear suspension
-		RearConstant = 47000, -- if it's higher, the suspension is set higher and will move less
+		RearConstant = 37000, -- if it's higher, the suspension is set higher and will move less
 		RearDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
 		RearRelativeDamping = 3000, -- just copy the setting above
 
@@ -144,11 +144,11 @@ local V = {
 		BrakePower = 65, -- If set really high, there's a chance your car will fly over his head
 
 		IdleRPM = 720, -- just let it 720, it doesn't matter anyway
-		LimitRPM = 7900, -- this is the limit. you can't go higher than the limit
+		LimitRPM = 6800, -- this is the limit. you can't go higher than the limit
 		Revlimiter = true, -- If true - When the speedometer reaches of the red designation, it does not pass on, if false it is ignored
-		PeakTorque = 255, -- how fast your wheels spin
-		PowerbandStart = 3250, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
-		PowerbandEnd = 6900, -- this is the red limit.
+		PeakTorque = 304, -- how fast your wheels spin
+		PowerbandStart = 2050, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
+		PowerbandEnd = 6500, -- this is the red limit.
 		Turbocharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Supercharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Backfire = false, -- will you car bang bang piew piew out of the exhaust?
@@ -159,10 +159,42 @@ local V = {
 
 		PowerBias = 1, -- if positive, it's rear wheel drive, if negative, it's front wheel drive. for example, a ford mustang is rear wheel drive (1) and lamborghini are mostly all wheel drive (0)
 
-		EngineSoundPreset = 9, -- just let that.
+		EngineSoundPreset = 0,
+		
+		snd_low = "dryad/fordmustang/3754c.wav",
+		snd_low_revdown = "dryad/fordmustang/4076c_ext_off.wav",
+		snd_low_pitch = 1,
+		
+		snd_gearup = "dryad/fordmustang/gearupEXT.wav",
+		snd_geardown = "dryad/fordmustang/geardnEXT.wav",
+
+		snd_mid_pitch = 1,
+
+		Sound_Idle = "dryad/fordmustang/idle_1201b.wav",
+		Sound_IdlePitch = 1,
+		
+		Sound_Mid = "dryad/fordmustang/5591a_ext.wav",
+		Sound_MidPitch = 1,
+		Sound_MidVolume = 1,
+		Sound_MidFadeOutRPMpercent = 58,
+		Sound_MidFadeOutRate = 0.476,
+
+		snd_backfire = "dryad/fordmustang/backfireEXT_2.wav",
+		
+		Sound_High = "dryad/fordmustang/7065e.wav",
+		Sound_HighPitch = 1,
+		Sound_HighVolume = 1,
+		Sound_HighFadeInRPMpercent = 58,
+		Sound_HighFadeInRate = 0.19,
+		
+		Sound_Throttle = "",
+		Sound_ThrottlePitch = 1,
+		Sound_ThrottleVolume = 1,
+		
+		snd_horn = "dryad/fordmustang/horn.wav",
 --
-		DifferentialGear = 0.85, -- experiment with it.
-		Gears = {-0.05,0,0.05,0.09,0.12,0.16,0.2,0.24} -- how many gears do you want?
+		DifferentialGear = 1, -- experiment with it.
+		Gears = {-0.05,0,0.05,0.09,0.15,0.19,0.24,0.30} -- how many gears do you want?
 	}
 }
 if (file.Exists( "models/sentry/15gt_new.mdl", "GAME" )) then -- name of the model (".mdl")

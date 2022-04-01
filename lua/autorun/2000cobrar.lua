@@ -68,15 +68,15 @@ list.Set( "simfphys_lights", "2000_cobrar", light_table)
 local V = {
 	Name = "2000 Ford Mustang Cobra R", -- Name of the car in-game 
 	Model = "models/sentry/cobrar.mdl", -- machine model (in the tab add-ons and prop auto)
-	Category = "[Iar]SGMCars Muscle Pack 2.0", -- category which is car
+	Category = "[Dryad]SGMCars Muscle", -- category which is car
 
 	Members = {
-		Mass = 1504, -- how much your vehicle weights
+		Mass = 1904, -- how much your vehicle weights
 
 		AirFriction = -300000, -- just see and hope you get it right
 
-		FrontWheelRadius = 15.5, -- how big is your front wheel? (those are physical, not visual)
-		RearWheelRadius = 15.5, -- how big is your rear wheel? (those are physical, not visual)
+		FrontWheelRadius = 14, -- how big is your front wheel? (those are physical, not visual)
+		RearWheelRadius = 14, -- how big is your rear wheel? (those are physical, not visual)
 
 		CustomMassCenter = Vector(0,0,-6), 
 
@@ -103,7 +103,7 @@ local V = {
 
 		LightsTable = "2000_cobrar",
 
-		SpeedoMax = 160, -- The maximum speed on the speedometer
+		SpeedoMax = 240, -- The maximum speed on the speedometer
 
 		StrengthenSuspension = false,
 
@@ -118,21 +118,21 @@ local V = {
 		RearRelativeDamping = 3000, -- just copy the setting above
 
 		FastSteeringAngle = 10, -- how sharp it will turn until it reaches a paticular speed
-		SteeringFadeFastSpeed = 535, -- yeah kinda the paticular speed
+		SteeringFadeFastSpeed = 935, -- yeah kinda the paticular speed
 
 		TurnSpeed = 6,  -- how fast will it turn? higher is faster. base is 8, but in my opinion, 6 is better.
 
 		MaxGrip = 75, -- watch out, otherwise your car will slip or will roll over its head.
-		Efficiency = 1, -- how fast you car will go, like acceleration
+		Efficiency = 0.8, -- how fast you car will go, like acceleration
 		GripOffset = -7, -- negative is for the rear and the positive for the front
-		BrakePower = 65, -- If set really high, there's a chance your car will fly over his head
+		BrakePower = 75, -- If set really high, there's a chance your car will fly over his head
 
 		IdleRPM = 720, -- just let it 720, it doesn't matter anyway
-		LimitRPM = 6300, -- this is the limit. you can't go higher than the limit
+		LimitRPM = 6000, -- this is the limit. you can't go higher than the limit
 		Revlimiter = true, -- If true - When the speedometer reaches of the red designation, it does not pass on, if false it is ignored
-		PeakTorque = 241, -- how fast your wheels spin
-		PowerbandStart = 2350, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
-		PowerbandEnd = 5900, -- this is the red limit.
+		PeakTorque = 355, -- how fast your wheels spin
+		PowerbandStart = 1000, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
+		PowerbandEnd = 5700, -- this is the red limit.
 		Turbocharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Supercharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Backfire = false, -- will you car bang bang piew piew out of the exhaust?
@@ -143,10 +143,44 @@ local V = {
 
 		PowerBias = 1, -- if positive, it's rear wheel drive, if negative, it's front wheel drive. for example, a ford mustang is rear wheel drive (1) and lamborghini are mostly all wheel drive (0)
 
-		EngineSoundPreset = 5, -- just let that.
+		EngineSoundPreset = 0,
+		
+		snd_low = "dryad/daumasugadaaqui/2785a.wav",
+		snd_low_revdown = "dryad/daumasugadaaqui/2785a_off.wav",
+		snd_mid_revdown = "dryad/daumasugadaaqui/4017a_off.wav",
+		snd_high_revdown = "dryad/daumasugadaaqui/5571b_off.wav",
+		snd_low_pitch = 1,
+		
+		snd_gearup = "dryad/daumasugadaaqui/gearupEXT.wav",
+		snd_geardown = "dryad/daumasugadaaqui/geardnEXT.wav",
+
+		snd_mid_pitch = 1,
+
+		Sound_Idle = "dryad/daumasugadaaqui/xbow_idle.wav",
+		Sound_IdlePitch = 1,
+		
+		Sound_Mid = "dryad/daumasugadaaqui/4017a.wav",
+		Sound_MidPitch = 1,
+		Sound_MidVolume = 1,
+		Sound_MidFadeOutRPMpercent = 58,
+		Sound_MidFadeOutRate = 0.476,
+
+		snd_backfire = "dryad/daumasugadaaqui/backfire_1.wav",
+		
+		Sound_High = "dryad/daumasugadaaqui/5571b.wav",
+		Sound_HighPitch = 1,
+		Sound_HighVolume = 1,
+		Sound_HighFadeInRPMpercent = 58,
+		Sound_HighFadeInRate = 0.19,
+		
+		Sound_Throttle = "",
+		Sound_ThrottlePitch = 1,
+		Sound_ThrottleVolume = 1,
+		
+		snd_horn = "dryad/daumasugadaaqui/horn.wav",
 --
-		DifferentialGear = 0.78, -- experiment with it.
-		Gears = {-0.1,0,0.1,0.16,0.20,0.27,0.31} -- how many gears do you want?
+		DifferentialGear = 0.68, -- experiment with it.
+		Gears = {-0.1,0,0.08,0.18,0.28,0.38,0.48,0.58} -- how many gears do you want?
 	}
 }
 if (file.Exists( "models/sentry/cobrar.mdl", "GAME" )) then -- name of the model (".mdl")

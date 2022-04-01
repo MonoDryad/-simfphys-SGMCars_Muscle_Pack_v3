@@ -85,15 +85,15 @@ list.Set( "simfphys_lights", "zr1", light_table)
 local V = {
 	Name = "Chevrolet Corvette ZR1", -- Name of the car in-game 
 	Model = "models/sentry/zr1.mdl", -- machine model (in the tab add-ons and prop auto)
-	Category = "[Iar]SGMCars Muscle Pack 2.0", -- category which is car
+	Category = "[Dryad]SGMCars Muscle", -- category which is car
 
 	Members = {
 		Mass = 1504, -- how much your vehicle weights
 
 		AirFriction = -300000, -- just see and hope you get it right
 
-		FrontWheelRadius = 14, -- how big is your front wheel? (those are physical, not visual)
-		RearWheelRadius = 14, -- how big is your rear wheel? (those are physical, not visual)
+		FrontWheelRadius = 16, -- how big is your front wheel? (those are physical, not visual)
+		RearWheelRadius = 16, -- how big is your rear wheel? (those are physical, not visual)
 
 		CustomMassCenter = Vector(0,0,-6), 
 
@@ -120,22 +120,22 @@ local V = {
 
 		LightsTable = "zr1",
 
-		SpeedoMax = 160, -- The maximum speed on the speedometer
+		SpeedoMax = 240, -- The maximum speed on the speedometer
 
-		StrengthenSuspension = false,
+		StrengthenSuspension = true,
 
-		FrontHeight = 12, -- the height of the front suspension
-		FrontConstant = 47000, -- if it's higher, the suspension is set higher and will move less
+		FrontHeight = 11, -- the height of the front suspension
+		FrontConstant = 31000, -- if it's higher, the suspension is set higher and will move less
 		FrontDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
 		FrontRelativeDamping = 3000, -- just copy the setting above
 
-		RearHeight = 12, -- the height of the rear suspension
-		RearConstant = 47000, -- if it's higher, the suspension is set higher and will move less
+		RearHeight = 11, -- the height of the rear suspension
+		RearConstant = 31000, -- if it's higher, the suspension is set higher and will move less
 		RearDamping = 3000, -- if it's higher, the suspension will move less. watch out, don't set too high otherwise your wheels will act weird.
 		RearRelativeDamping = 3000, -- just copy the setting above
 
 		FastSteeringAngle = 10, -- how sharp it will turn until it reaches a paticular speed
-		SteeringFadeFastSpeed = 135, -- yeah kinda the paticular speed
+		SteeringFadeFastSpeed = 1035, -- yeah kinda the paticular speed
 
 		TurnSpeed = 8,  -- how fast will it turn? higher is faster. base is 8, but in my opinion, 6 is better.
 
@@ -145,12 +145,12 @@ local V = {
 		BrakePower = 51, -- If set really high, there's a chance your car will fly over his head
 
 		IdleRPM = 720, -- just let it 720, it doesn't matter anyway
-		LimitRPM = 7900, -- this is the limit. you can't go higher than the limit
+		LimitRPM = 6900, -- this is the limit. you can't go higher than the limit
 		Revlimiter = true, -- If true - When the speedometer reaches of the red designation, it does not pass on, if false it is ignored
-		PeakTorque = 295, -- how fast your wheels spin
-		PowerbandStart = 3450, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
-		PowerbandEnd = 6900, -- this is the red limit.
-		Turbocharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
+		PeakTorque = 300, -- how fast your wheels spin
+		PowerbandStart = 1450, -- when will you transmit first? if set to 1000, it will transmit for the first time at 2000. just take the half of the powerband end
+		PowerbandEnd = 6500, -- this is the red limit.
+		Turbocharged = true, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Supercharged = false, -- check car information on the internet before using it; is the car turbo- or supercharged?
 		Backfire = false, -- will you car bang bang piew piew out of the exhaust?
 
@@ -162,8 +162,8 @@ local V = {
 
 		EngineSoundPreset = 3, -- just let that.
 --
-		DifferentialGear = 0.6, -- experiment with it.
-		Gears = {-0.1,0,0.08,0.19,0.25,0.3,0.4,0.46} -- how many gears do you want?
+		DifferentialGear = 0.9, -- experiment with it.
+		Gears = {-0.1,0,0.1,0.13,0.19,0.25,0.31,0.36} -- how many gears do you want?
 	}
 }
 if (file.Exists( "models/sentry/zr1.mdl", "GAME" )) then -- name of the model (".mdl")
